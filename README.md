@@ -1,4 +1,4 @@
-# Visceral Coaching App
+# Visceral Coaching App - MVP
 
 Una aplicación móvil de coaching desarrollada con Flutter.
 
