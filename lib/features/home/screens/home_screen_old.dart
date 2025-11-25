@@ -9,8 +9,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = User.demo(); // TODO: Obtener del provider/Firebase
-    final userPlans = <VisceralPlan>[]; // TODO: Cargar planes activos del usuario
+    final user = User.demo(); // TODO: Get from provider/Firebase
+    final userPlans = <VisceralPlan>[]; // TODO: Load active user plans
     final challenges = Challenge.mockChallenges();
     final availableChallenge = challenges.firstWhere(
       (c) => !c.isComingSoon,
@@ -25,11 +25,11 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Saludo personalizado y minimal
+              // Personalized minimal greeting
               _buildGreeting(context, user),
               const SizedBox(height: 40),
 
-              // Sección de planes o invitación
+              // Plans section or invitation
               if (userPlans.isEmpty)
                 _buildPlanInvitation(context)
               else
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
               
               const SizedBox(height: 32),
 
-              // Invitación al ejercicio del día
+              // Daily challenge invitation
               _buildDailyChallengeInvitation(context, availableChallenge),
             ],
           ),
@@ -155,7 +155,7 @@ class HomeScreen extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                // TODO: Navegar a planes
+                // TODO: Navigate to plans
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.visceralSoul,
@@ -284,7 +284,7 @@ class HomeScreen extends StatelessWidget {
             width: double.infinity,
             child: OutlinedButton(
               onPressed: () {
-                // TODO: Continuar plan
+                // TODO: Continue plan
               },
               style: OutlinedButton.styleFrom(
                 foregroundColor: planColor,
@@ -338,7 +338,7 @@ class HomeScreen extends StatelessWidget {
           onTap: challenge.isComingSoon
               ? null
               : () {
-                  // TODO: Navegar al reto
+                  // TODO: Navigate to challenge
                 },
           borderRadius: BorderRadius.circular(24),
           child: Padding(
@@ -430,7 +430,7 @@ class HomeScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        // TODO: Iniciar reto
+                        // TODO: Start challenge
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
@@ -442,7 +442,7 @@ class HomeScreen extends StatelessWidget {
                         elevation: 0,
                       ),
                       child: const Text(
-                        'Comenzar Ahora',
+                        'Start Now',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 16,

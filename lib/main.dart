@@ -7,10 +7,10 @@ import 'navigation/main_navigation.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // Configurar RevenueCat
+  // Configure RevenueCat
   await Purchases.configure(
     PurchasesConfiguration('test_YzyxiiLGFjhGMKniLgvByZXHORZ')
-      ..appUserID = null, // Opcional: ID de usuario personalizado
+      ..appUserID = null, // Optional: Custom user ID
   );
   
   runApp(const VisceralApp());
@@ -33,7 +33,7 @@ class VisceralApp extends StatelessWidget {
           elevation: 0,
         ),
         textTheme: TextTheme(
-          // Títulos - Montserrat
+          // Headings - Montserrat
           displayLarge: GoogleFonts.montserrat(
             fontSize: 32,
             fontWeight: FontWeight.w700,
@@ -82,9 +82,9 @@ class VisceralApp extends StatelessWidget {
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
             letterSpacing: 2.0,
-            // Para uppercase labels pequeños
+            // For small uppercase labels
           ),
-          // Texto corrido - Inter
+          // Body text - Inter
           bodyLarge: GoogleFonts.inter(
             fontSize: 16,
             fontWeight: FontWeight.w400,

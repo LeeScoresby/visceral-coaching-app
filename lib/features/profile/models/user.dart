@@ -1,4 +1,4 @@
-/// Modelo de datos para el usuario
+/// Data model for the user
 class User {
   final String id;
   final String name;
@@ -16,7 +16,7 @@ class User {
     this.hasMembership = false,
   });
 
-  /// Constructor para crear un usuario mock/demo
+  /// Constructor to create a mock/demo user
   factory User.demo() {
     return User(
       id: 'demo-user-123',
@@ -27,7 +27,7 @@ class User {
     );
   }
 
-  /// Constructor desde JSON (para cuando uses Firebase)
+  /// Constructor from JSON (for when you use Firebase)
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json['id'] as String,
@@ -39,7 +39,7 @@ class User {
     );
   }
 
-  /// Convertir a JSON (para cuando uses Firebase)
+  /// Convert to JSON (for when you use Firebase)
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -51,7 +51,7 @@ class User {
     };
   }
 
-  /// Crear copia con campos actualizados
+  /// Create a copy with updated fields
   User copyWith({
     String? name,
     String? email,

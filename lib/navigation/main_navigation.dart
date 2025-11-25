@@ -6,7 +6,7 @@ import '../features/coaching/screens/coaching_sessions_screen.dart';
 import '../features/plans/screens/plans_screen.dart';
 import '../features/profile/screens/profile_screen.dart';
 
-/// Widget principal que gestiona la navegación entre las 5 pantallas principales
+/// Main widget that manages navigation between the 5 main screens
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
 
@@ -17,7 +17,7 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _currentIndex = 0;
 
-  // Lista de pantallas
+  // List of screens
   final List<Widget> _screens = const [
     HomeScreen(),
     ChallengesScreen(),

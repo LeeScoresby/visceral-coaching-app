@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = User.demo(); // TODO: Obtener del provider/Firebase
+    final user = User.demo(); // TODO: Get from provider/Firebase
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -37,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
             _buildAvatar(user),
             const SizedBox(height: 32),
 
-            // Datos personales
+            // Personal data
             _buildPersonalDataCard(context, user),
           ],
         ),
@@ -89,7 +89,7 @@ class ProfileScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'INFORMACIÓN',
+            'INFORMATION',
             style: GoogleFonts.montserrat(
               fontSize: 10,
               fontWeight: FontWeight.w600,
@@ -100,7 +100,7 @@ class ProfileScreen extends StatelessWidget {
           const SizedBox(height: 24),
           
           _buildDataRow(
-            label: 'NOMBRE',
+            label: 'NAME',
             value: user.name,
           ),
           const SizedBox(height: 20),
@@ -112,7 +112,7 @@ class ProfileScreen extends StatelessWidget {
           const SizedBox(height: 20),
           
           _buildDataRow(
-            label: 'MIEMBRO DESDE',
+            label: 'MEMBER SINCE',
             value: _formatDate(user.createdAt),
           ),
         ],
@@ -151,8 +151,8 @@ class ProfileScreen extends StatelessWidget {
 
   String _formatDate(DateTime date) {
     final months = [
-      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
     ];
     return '${months[date.month - 1]} ${date.year}';
   }

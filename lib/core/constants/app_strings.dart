@@ -1,4 +1,4 @@
-/// Constantes de strings de la aplicación
+/// Application string constants
 class AppStrings {
   AppStrings._();
 

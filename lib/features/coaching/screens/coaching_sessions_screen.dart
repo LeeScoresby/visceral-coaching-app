@@ -9,16 +9,16 @@ class CoachingSessionsScreen extends StatelessWidget {
 
   String _formatDate(DateTime date) {
     const months = [
-      'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
-      'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
     ];
-    return '${date.day} de ${months[date.month - 1]} de ${date.year}';
+    return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
 
   @override
   Widget build(BuildContext context) {
     final sessions = CoachingSession.mockSessions();
-    // Ordenar por fecha más reciente primero
+    // Sort by most recent date first
     sessions.sort((a, b) => b.date.compareTo(a.date));
 
     return Scaffold(
@@ -63,7 +63,7 @@ class CoachingSessionsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Text(
-              'No hay sesiones aún',
+              'No sessions yet',
               style: GoogleFonts.montserrat(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
@@ -72,7 +72,7 @@ class CoachingSessionsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'Tus sesiones de coaching aparecerán aquí',
+              'Your coaching sessions will appear here',
               textAlign: TextAlign.center,
               style: GoogleFonts.inter(
                 fontSize: 14,

@@ -1,4 +1,4 @@
-/// Tipo de plan Visceral
+/// Visceral plan type
 enum PlanType {
   soul,
   body;
@@ -22,7 +22,7 @@ enum PlanType {
   }
 }
 
-/// Estado de un plan
+/// Plan status
 enum PlanStatus {
   notStarted,
   inProgress,
@@ -31,16 +31,16 @@ enum PlanStatus {
   String get displayName {
     switch (this) {
       case PlanStatus.notStarted:
-        return 'No iniciado';
+        return 'Not started';
       case PlanStatus.inProgress:
-        return 'En progreso';
+        return 'In progress';
       case PlanStatus.completed:
-        return 'Completado';
+        return 'Completed';
     }
   }
 }
 
-/// Modelo de datos para un plan Visceral
+/// Data model for a Visceral plan
 class VisceralPlan {
   final String id;
   final PlanType type;
@@ -70,7 +70,7 @@ class VisceralPlan {
     this.progressPercentage = 0.0,
   });
 
-  /// Constructor desde JSON
+  /// Constructor from JSON
   factory VisceralPlan.fromJson(Map<String, dynamic> json) {
     return VisceralPlan(
       id: json['id'] as String,
@@ -98,7 +98,7 @@ class VisceralPlan {
     );
   }
 
-  /// Convertir a JSON
+  /// Convert to JSON
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -116,7 +116,7 @@ class VisceralPlan {
     };
   }
 
-  /// Crear copia con campos actualizados
+  /// Create a copy with updated fields
   VisceralPlan copyWith({
     PlanType? type,
     String? title,
@@ -146,39 +146,39 @@ class VisceralPlan {
     );
   }
 
-  /// Planes disponibles
+  /// Available plans
   static List<VisceralPlan> availablePlans() {
     return [
       const VisceralPlan(
         id: 'visceral-soul',
         type: PlanType.soul,
         title: 'Visceral SOUL',
-        description: 'Conecta con tu esencia más profunda. Un viaje de 12 semanas para despertar tu consciencia visceral y transformar tu relación contigo mismo.',
+        description: 'Connect with your deepest essence. A 12-week journey to awaken your visceral consciousness and transform your relationship with yourself.',
         totalWeeks: 12,
         isAvailable: true,
         milestones: [
-          'Semanas 1-4: Despertar la Consciencia',
-          'Semanas 5-8: Integración Emocional',
-          'Semanas 9-12: Transformación Profunda',
+          'Weeks 1-4: Awakening Consciousness',
+          'Weeks 5-8: Emotional Integration',
+          'Weeks 9-12: Deep Transformation',
         ],
       ),
       const VisceralPlan(
         id: 'visceral-body',
         type: PlanType.body,
         title: 'Visceral BODY',
-        description: 'Honra tu templo físico. Un programa holístico para fortalecer la conexión cuerpo-mente y cultivar vitalidad desde tu centro.',
+        description: 'Honor your physical temple. A holistic program to strengthen the mind-body connection and cultivate vitality from your core.',
         totalWeeks: 12,
-        isAvailable: false, // Próximamente
+        isAvailable: false, // Coming soon
         milestones: [
-          'Semanas 1-4: Fundamentos Corporales',
-          'Semanas 5-8: Movimiento Consciente',
-          'Semanas 9-12: Vitalidad Integrada',
+          'Weeks 1-4: Corporeal Foundations',
+          'Weeks 5-8: Conscious Movement',
+          'Weeks 9-12: Integrated Vitality',
         ],
       ),
     ];
   }
 
-  /// Plan demo para desarrollo
+  /// Demo plan for development
   static VisceralPlan demo() {
     return availablePlans().first;
   }

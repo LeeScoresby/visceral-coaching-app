@@ -13,10 +13,10 @@ class CoachingSessionDetailScreen extends StatelessWidget {
 
   String _formatDate(DateTime date) {
     const months = [
-      'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
-      'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
     ];
-    return '${date.day} de ${months[date.month - 1]} de ${date.year}';
+    return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
 
   @override
@@ -31,7 +31,7 @@ class CoachingSessionDetailScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'SESIÓN',
+          'SESSION',
           style: GoogleFonts.montserrat(
             color: AppColors.textPrimary,
             fontWeight: FontWeight.w600,
@@ -71,9 +71,9 @@ class CoachingSessionDetailScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               
-              // Resumen
+              // Summary
               Text(
-                'RESUMEN',
+                'SUMMARY',
                 style: GoogleFonts.montserrat(
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
@@ -103,9 +103,9 @@ class CoachingSessionDetailScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               
-              // Conclusiones
+              // Conclusions
               Text(
-                'CONCLUSIONES',
+                'CONCLUSIONS',
                 style: GoogleFonts.montserrat(
                   fontSize: 12,
                   fontWeight: FontWeight.w700,

@@ -12,7 +12,7 @@ class PlansScreen extends StatefulWidget {
 }
 
 class _PlansScreenState extends State<PlansScreen> {
-  List<VisceralPlan> _userPlans = []; // Planes activos del usuario
+  List<VisceralPlan> _userPlans = []; // User active plans
   bool _isLoading = true;
 
   @override
@@ -22,8 +22,8 @@ class _PlansScreenState extends State<PlansScreen> {
   }
 
   Future<void> _loadUserPlans() async {
-    // TODO: Cargar desde Firebase los planes activos del usuario
-    // Por ahora simulamos que no tiene planes
+    // TODO: Load active user plans from Firebase
+    // For now we simulate that the user has no plans
     setState(() {
       _userPlans = [];
       _isLoading = false;
@@ -34,13 +34,13 @@ class _PlansScreenState extends State<PlansScreen> {
     try {
       await RevenueCatUI.presentPaywall();
       
-      // Recargar planes después del paywall
+      // Reload plans after paywall
       await _loadUserPlans();
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Error al mostrar planes'),
+            content: Text('Error showing plans'),
             backgroundColor: AppColors.error,
           ),
         );
@@ -65,7 +65,7 @@ class _PlansScreenState extends State<PlansScreen> {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         title: Text(
-          'PLANES',
+          'PLANS',
           style: GoogleFonts.montserrat(
             color: AppColors.textPrimary,
             fontWeight: FontWeight.w600,
@@ -90,7 +90,7 @@ class _PlansScreenState extends State<PlansScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Tus Planes Activos',
+            'Your Active Plans',
             style: GoogleFonts.montserrat(
               fontSize: 24,
               fontWeight: FontWeight.w700,
@@ -99,7 +99,7 @@ class _PlansScreenState extends State<PlansScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Continúa tu viaje de transformación',
+            'Continue your transformation journey',
             style: GoogleFonts.inter(
               fontSize: 15,
               color: AppColors.textSecondary,
@@ -137,7 +137,7 @@ class _PlansScreenState extends State<PlansScreen> {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {
-            // TODO: Navegar a detalle del plan
+            // TODO: Navigate to plan details
           },
           child: Padding(
             padding: const EdgeInsets.all(24),
@@ -180,7 +180,7 @@ class _PlansScreenState extends State<PlansScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      // TODO: Continuar plan
+                      // TODO: Continue plan
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -191,8 +191,8 @@ class _PlansScreenState extends State<PlansScreen> {
                     ),
                     child: Text(
                       plan.status == PlanStatus.notStarted
-                          ? 'COMENZAR VIAJE'
-                          : 'CONTINUAR',
+                          ? 'START JOURNEY'
+                          : 'CONTINUE',
                       style: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w700,
                         fontSize: 14,
@@ -258,7 +258,7 @@ class _PlansScreenState extends State<PlansScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Elige tu Camino',
+            'Choose Your Path',
             style: GoogleFonts.montserrat(
               fontSize: 28,
               fontWeight: FontWeight.w700,
@@ -268,7 +268,7 @@ class _PlansScreenState extends State<PlansScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Comienza tu transformación visceral',
+            'Begin your visceral transformation',
             style: GoogleFonts.inter(
               fontSize: 16,
               color: AppColors.textSecondary,
@@ -346,7 +346,7 @@ class _PlansScreenState extends State<PlansScreen> {
                                   color: AppColors.textTertiary.withOpacity(0.15),
                                 ),
                                 child: Text(
-                                  'PRÓXIMAMENTE',
+                                  'COMING SOON',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 10,
                                     fontWeight: FontWeight.w600,
@@ -372,7 +372,7 @@ class _PlansScreenState extends State<PlansScreen> {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    'RECORRIDO DE ${plan.totalWeeks} SEMANAS',
+                    '${plan.totalWeeks} WEEK JOURNEY',
                     style: GoogleFonts.montserrat(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
@@ -425,7 +425,7 @@ class _PlansScreenState extends State<PlansScreen> {
                           elevation: 0,
                         ),
                         child: Text(
-                          'COMENZAR AHORA',
+                          'START NOW',
                           style: GoogleFonts.montserrat(
                             fontWeight: FontWeight.w700,
                             fontSize: 14,

@@ -14,7 +14,7 @@ class ChallengesScreen extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('Error al mostrar planes'),
+            content: const Text('Error showing plans'),
             backgroundColor: AppColors.error,
           ),
         );
@@ -28,9 +28,9 @@ class ChallengesScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
+        appBar: AppBar(
         title: Text(
-          'RETOS',
+          'CHALLENGES',
           style: GoogleFonts.montserrat(
             fontSize: 12,
             fontWeight: FontWeight.w600,
@@ -73,7 +73,7 @@ class ChallengesScreen extends StatelessWidget {
                   if (isPremium) {
                     _showPaywall(context);
                   } else {
-                    // TODO: Navegar a detalle del reto
+                    // TODO: Navigate to challenge details
                   }
                 }
               : null,
@@ -88,7 +88,7 @@ class ChallengesScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 12),
                       child: Text(
-                        'PRÓXIMAMENTE',
+                        'COMING SOON',
                         style: GoogleFonts.montserrat(
                           fontSize: 10,
                           fontWeight: FontWeight.w600,

@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           ),
                         ),
                         const SizedBox(height: 40),
-                        // Indicador sutil de scroll
+                        // Subtle scroll indicator
                         AnimatedBuilder(
                           animation: _controller,
                           builder: (context, child) {
@@ -143,13 +143,13 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             sliver: SliverList(
               delegate: SliverChildListDelegate([
-                _buildSectionLabel('SESIONES DE COACHING'),
+                _buildSectionLabel('COACHING SESSIONS'),
                 const SizedBox(height: 16),
                 _buildCoachingSection(context),
                 
                 const SizedBox(height: 48),
                 
-                _buildSectionLabel('PRÓXIMOS PASOS'),
+                _buildSectionLabel('NEXT STEPS'),
                 const SizedBox(height: 16),
                 _buildNextStepsSection(context),
               ]),
@@ -202,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           ),
           const SizedBox(height: 16),
           Text(
-            'Tu primera sesión de coaching\nte espera',
+            'Your first coaching session\nawaits you',
             textAlign: TextAlign.center,
             style: GoogleFonts.inter(
               fontSize: 14,
@@ -217,8 +217,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
   Widget _buildCoachingCard(BuildContext context, CoachingSession session) {
     final months = [
-      'ene', 'feb', 'mar', 'abr', 'may', 'jun',
-      'jul', 'ago', 'sep', 'oct', 'nov', 'dic'
+      'jan', 'feb', 'mar', 'apr', 'may', 'jun',
+      'jul', 'aug', 'sep', 'oct', 'nov', 'dec'
     ];
     final dateStr = '${session.date.day} ${months[session.date.month - 1]} ${session.date.year}';
 
@@ -226,7 +226,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       color: Colors.transparent,
       child: InkWell(
         onTap: () {
-          // TODO: Navegar a coaching
+          // TODO: Navigate to coaching
         },
         child: Container(
           padding: const EdgeInsets.all(24),
@@ -241,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'ÚLTIMA SESIÓN',
+                'LAST SESSION',
                 style: GoogleFonts.montserrat(
                   fontSize: 10,
                   fontWeight: FontWeight.w600,
@@ -274,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               Row(
                 children: [
                   Text(
-                    'VER DETALLES',
+                    'VIEW DETAILS',
                     style: GoogleFonts.montserrat(
                       fontSize: 10,
                       fontWeight: FontWeight.w600,
@@ -301,20 +301,20 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     return Column(
       children: [
         _buildActionCard(
-          label: 'EXPLORAR',
-          title: 'Retos disponibles',
-          description: 'Ejercicios diseñados para tu crecimiento personal',
+          label: 'EXPLORE',
+          title: 'Available challenges',
+          description: 'Exercises designed for your personal growth',
           onTap: () {
-            // TODO: Navegar a retos
+            // TODO: Navigate to challenges
           },
         ),
         const SizedBox(height: 16),
         _buildActionCard(
-          label: 'DESCUBRIR',
-          title: 'Planes de coaching',
-          description: 'Elige el camino que resuene con tu propósito',
+          label: 'DISCOVER',
+          title: 'Coaching plans',
+          description: 'Choose the path that resonates with your purpose',
           onTap: () {
-            // TODO: Navegar a planes
+            // TODO: Navigate to plans
           },
         ),
       ],

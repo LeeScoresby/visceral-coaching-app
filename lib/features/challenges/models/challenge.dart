@@ -1,4 +1,4 @@
-/// Tipo de reto según acceso
+/// Challenge type based on access
 enum ChallengeType {
   free,
   premium;
@@ -6,7 +6,7 @@ enum ChallengeType {
   String get displayName {
     switch (this) {
       case ChallengeType.free:
-        return 'Gratis';
+        return 'Free';
       case ChallengeType.premium:
         return 'Premium';
     }
@@ -22,7 +22,7 @@ enum ChallengeType {
   }
 }
 
-/// Modelo de datos para un reto/challenge
+/// Data model for a challenge
 class Challenge {
   final String id;
   final String title;
@@ -46,7 +46,7 @@ class Challenge {
     this.isComingSoon = false,
   });
 
-  /// Constructor desde JSON
+  /// Constructor from JSON
   factory Challenge.fromJson(Map<String, dynamic> json) {
     return Challenge(
       id: json['id'] as String,
@@ -64,7 +64,7 @@ class Challenge {
     );
   }
 
-  /// Convertir a JSON
+  /// Convert to JSON
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -79,7 +79,7 @@ class Challenge {
     };
   }
 
-  /// Crear copia con campos actualizados
+  /// Create a copy with updated fields
   Challenge copyWith({
     String? title,
     String? description,
@@ -103,7 +103,7 @@ class Challenge {
     );
   }
 
-  /// Datos mock para desarrollo
+  /// Mock data for development
   static List<Challenge> mockChallenges() {
     return [
       const Challenge(
